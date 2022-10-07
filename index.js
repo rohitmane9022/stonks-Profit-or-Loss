@@ -18,22 +18,22 @@ function submitHandler(){
 function calculateProfitAndLoss(initial,quantity,current){
   if(initial > current){
     var loss = (initial - current) * quantity;
-    var lossPercentage = (loss / initial) * 100;
-showmessage('Hey you loss is '+(loss) + ' and the percent is ' +(lossPercentage) + '%')
+    var lossPercentage = (loss /  (initial * quantity)) * 100;
+showmessage("Hey you loss is "+(loss) + " and the percent is " +(lossPercentage.toFixed(2)) + "%")
 output.style.color="red";
     
   }
 
   else if(current > initial){
     var profit = (current - initial) * quantity
-      var profitPercentage = (profit / initial) * 100;
+      var profitPercentage = (profit / (initial * quantity)) * 100;
 
-      showmessage('Hey you profit is '+(profit) + ' and the percent is ' +(profitPercentage) + '%')
+      showmessage("Hey you profit is "+(profit) + " and the percent is " +(profitPercentage.toFixed(2)) + "%")
       output.style.color="green";
   }
   else{
-    showmessage("No Pain no gain no gain no pain")
-    output.style.color="white";
+    showmessage("Please Fill the form")
+    output.style.color="red";
   }
 }
 
